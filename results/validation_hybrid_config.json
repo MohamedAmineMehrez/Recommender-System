@@ -1,0 +1,19 @@
+{
+  "cold_variant": "recency_pop",
+  "cold_bonus": 0.05,
+  "cold_weights": {
+    "recency": 1.0,
+    "pop_0.25d": 0.05
+  },
+  "warm_weights": {
+    "pop_0.25d": 1.0
+  },
+  "validation_metrics": {
+    "overall_ndcg@10": 0.437787590925681,
+    "overall_recall@10": 0.6971910112359551,
+    "cold_ndcg@10": 0.5002387268530272,
+    "cold_recall@10": 0.7873677248677249,
+    "warm_ndcg@10": 0.08545133151468365,
+    "warm_recall@10": 0.1884328358208955
+  }
+}

@@ -1,0 +1,3 @@
+model: hybrid
+hybrid:
+  normalization: rank

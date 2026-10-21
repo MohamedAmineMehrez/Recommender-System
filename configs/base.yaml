@@ -1,0 +1,71 @@
+seed: 42
+
+data:
+  articles_path: data/shared_articles.csv
+  interactions_path: data/users_interactions.csv
+  interim_dir: data/interim
+  processed_dir: data/processed
+
+split:
+  train_quantile: 0.7
+  val_quantile: 0.8
+  min_user_interactions: 5
+
+evaluation:
+  ks: [5, 10, 20]
+  bootstrap_samples: 1000
+  seed: 42
+
+baselines:
+  popularity_half_lives_days: [1, 7, 30]
+  recency_half_lives_days: [7, 30]
+  recency_language:
+    half_life_days: 30
+    language_weight: 1.0
+
+content:
+  half_life_days: 30
+  word_max_features: 20000
+  char_max_features: 10000
+  min_df: 3
+  max_df: 0.5
+  use_char: true
+  use_word: true
+
+collaborative:
+  factors: 64
+  regularization: 0.1
+  alpha: 40
+  iterations: 20
+  model_type: als
+
+hybrid:
+  normalization: rank
+  affinity_half_life_days: 30
+  cold_weights:
+    recency: 1.0
+    popularity: 0.5
+    content: 1.0
+    language: 0.2
+  warm_weights:
+    recency: 0.5
+    popularity: 0.5
+    content: 1.0
+    collaborative: 1.0
+    language: 0.2
+    author: 0.1
+    source: 0.1
+    region: 0.0
+
+ranker:
+  learning_rate: 0.03
+  num_leaves: 31
+  min_data_in_leaf: 50
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  lambda_l2: 1.0
+  num_boost_round: 1000
+  early_stopping_rounds: 100
+  negatives_hard: 50
+  negatives_random: 50
+  negatives_uniform: 50

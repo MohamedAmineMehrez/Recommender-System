@@ -1,0 +1,13 @@
+model: ranker
+ranker:
+  learning_rate: 0.03
+  num_leaves: 31
+  min_data_in_leaf: 50
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  lambda_l2: 1.0
+  num_boost_round: 1000
+  early_stopping_rounds: 100
+  negatives_hard: 50
+  negatives_random: 50
+  negatives_uniform: 50

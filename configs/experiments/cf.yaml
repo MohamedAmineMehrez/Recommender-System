@@ -1,0 +1,7 @@
+model: collaborative
+collaborative:
+  factors: 64
+  regularization: 0.1
+  alpha: 40
+  iterations: 20
+  model_type: als
