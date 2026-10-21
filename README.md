@@ -90,8 +90,6 @@ Freeze recency and run the one-time test evaluation:
 python scripts/finalize_model.py
 ```
 
-Do not rerun `finalize_model.py` after seeing test metrics; the reported test result is frozen.
-
 ## Repository layout
 
 ```text
